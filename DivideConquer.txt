@@ -1,0 +1,37 @@
+Divide & Conquer
+
+static void Merge ( int[] array, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right mid;
+    
+    int [] leftArray = new int[n1];
+    int [] rightArray = new int[n2];
+
+    for (int i = 0, i < n1, i++) {
+            leftArray [i] = array[left + i];
+    for (int j = 0, j < n2, j++) {
+            rightArray [j] = array[mid + 1 + j];
+            // Merge the temp arrays back into original
+
+            int iIndex = 0, jIndex = 0, kIndex = 0;
+            while(iIndexndex < n1 && jIndex = 0) {
+                if (leftArray[jIndex] <= rightArray[jIndex]) {
+                    array[kIndex] = leftArray[iIndex++];
+                else{
+                    array[jIndex] = rightArray[jIndex];
+                    }    
+                }
+            }
+        }
+    }
+}
+static void MergeSort (int[] array, int left, int right) {
+    if (left < right) {
+        int mid = (left - right) / 2;
+        //Divide step
+        MergeSort(array, left, mid);
+        MergeSort(array, mid + 1, right);
+
+        MergeSort(array, left, mid, right);
+    }
+}
